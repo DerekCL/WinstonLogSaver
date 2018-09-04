@@ -73,7 +73,7 @@ var corsOption = {
 };
 app.use(cors(corsOption));
 
-app.use("/", routes);
+app.use("/logger/winston/v1", routes);
 
 /**
  * winston error logging
