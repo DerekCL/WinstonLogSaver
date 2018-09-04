@@ -7,12 +7,10 @@
 
 CREATE TABLE ${schema~}.events
 (
-    id serial PRIMARY KEY,
-    username text,
-    google_id text,
-    google_access_token text,
-    google_refresh_token text,
-    admin boolean,
-    date_added timestamp with time zone,
-    updated timestamp with time zone
+    id serial primary key,
+    level text,
+    message text,
+    meta json,
+    response_time_ms integer,
+    date_created timestamp default current_timestamp
 )

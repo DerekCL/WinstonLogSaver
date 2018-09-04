@@ -1,7 +1,6 @@
 "use strict";
 
-const sql = require("../sql").users;
-const moment = require("moment-timezone");
+const sql = require("../sql").events;
 
 class events_repository {
   constructor(db, pgp) {
@@ -10,26 +9,12 @@ class events_repository {
   }
   // Adds a new user, and returns the new object;
   add(values) {
-    let now = moment()
-      .tz("America/Winnipeg")
-      .format();
     // Values Check
-    let googleAccessToken = values.google_access_token;
-    if (googleAccessToken === undefined || googleAccessToken === null) {
-      googleAccessToken = "";
-    }
-    let googleRefreshToken = values.google_refresh_token;
-    if (googleRefreshToken === undefined || googleRefreshToken === null) {
-      googleRefreshToken = "";
-    }
     return this.db.one(sql.add, {
-      username: values.username,
-      google_id: values.google_id,
-      google_access_token: encrypt(googleAccessToken),
-      google_refresh_token: encrypt(googleRefreshToken),
-      admin: true,
-      date_added: now,
-      updated: now,
+      level: values.level,
+      message: values.message,
+      meta: values.meta,
+      response_time_ms: values.response_time_ms,
     });
   }
   // Creates the table;

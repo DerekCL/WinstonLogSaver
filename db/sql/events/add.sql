@@ -7,22 +7,16 @@
 
 INSERT INTO ${schema~}.events
 (
-    username,
-    google_id,
-    google_access_token,
-    google_refresh_token,
-    admin,
-    date_added,
-    updated
+    level,
+    message,
+    response_time_ms,
+    meta
 )
 VALUES
 (
-    ${username},
-    ${google_id},
-    ${google_access_token},
-    ${google_refresh_token},
-    ${admin},
-    ${date_added},
-    ${updated}
+    ${level},
+    ${message},
+    ${response_time_ms},
+    ${meta}
 )
 RETURNING *

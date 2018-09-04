@@ -1,9 +1,7 @@
 const router = require("express").Router();
+const { index } = require("../lib/index");
 
 // Index route to the index page.
-router.get("/", (req, res) => {
-  console.log("sadasd");
-  res.send("req");
-});
+router.post("/", index);
 
 module.exports = router;
