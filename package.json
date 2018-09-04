@@ -27,6 +27,7 @@
     "ajv": "^6.5.3",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
+    "chai-http": "^4.2.0",
     "compression": "^1.7.3",
     "connect-pg-simple": "^5.0.0",
     "cookie-parser": "^1.4.3",
@@ -56,5 +57,14 @@
     "prettier": "^1.14.2",
     "typescript": "^3.0.3",
     "typescript-eslint-parser": "^18.0.0"
+  },
+  "nyc": {
+    "extension": [
+      ".js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
   }
 }
