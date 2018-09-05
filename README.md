@@ -6,6 +6,8 @@ node version 8.11.1
 npm version 5.6.0
 port 9900 open
 
+in addition you will need a .env file that is not uploaded to github for security purposes
+
 ## First steps
 To install dependencies, run `npm install`. After you've installed all the
 dependencies, you can start running.
